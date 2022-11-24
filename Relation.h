@@ -97,8 +97,8 @@ public:
     std::vector<int> ProjectRule(std::vector<Parameter*> ruleBody) { //change the star?
         std::vector<int> matchColumns;
 
-        for (int i = 0; i < ruleBody.size(); i++) {
-            for (int j = 0; j < header.GetHeader().size(); j++) {
+        for (unsigned int i = 0; i < ruleBody.size(); i++) {
+            for (unsigned int j = 0; j < header.GetHeader().size(); j++) {
                 if (ruleBody.at(i)->toString() == header.toStringSingle(j)) {
                     matchColumns.push_back(j);
                 }
@@ -114,7 +114,7 @@ public:
     }
 
     Header combineHeaders(std::vector<int> uniqueColumns, Header inputHeader) {
-        for (int i = 0; i < uniqueColumns.size(); i++ ) {
+        for (unsigned int i = 0; i < uniqueColumns.size(); i++ ) {
             header.setAttributes(inputHeader.toStringSingle(uniqueColumns.at(i)));
         }
         return header;
@@ -130,7 +130,7 @@ public:
     }
 
     Tuple CombineTuple(std::vector<int> uniqueColumns, Tuple firstTuple, Tuple secondTuple) {
-        for (int i = 0; i < uniqueColumns.size(); i++) {
+        for (unsigned int i = 0; i < uniqueColumns.size(); i++) {
             firstTuple.SetTuple(secondTuple.toStringSingle(uniqueColumns.at(i)));
             //std::cout << "My tuples at combineTuple() are: " <<firstTuple.toStringSingle(uniqueColumns.at(i)) << " & " << secondTuple.toStringSingle(uniqueColumns.at(i)) << std::endl;
         }
@@ -145,9 +145,9 @@ public:
         std::vector<int> uniqueColumns1;
         headMap.clear();
 
-        for (int i = 0; i < header.GetHeader().size(); i++) {
+        for (unsigned int i = 0; i < header.GetHeader().size(); i++) {
             bool unique = true;
-            for (int j = 0; j < inputRelation.header.GetHeader().size(); j++) {
+            for (unsigned int j = 0; j < inputRelation.header.GetHeader().size(); j++) {
                 if (header.toStringSingle(i) == inputRelation.header.toStringSingle(j)) {
                     //std::cout << "these are my headers:" << std::endl;
                     //std::cout << "origin header: " << header.toStringSingle(i) << std::endl;
@@ -159,9 +159,9 @@ public:
                 }
             }
         }
-        for (int i = 0; i < inputRelation.header.GetHeader().size(); i++) {
+        for (unsigned int i = 0; i < inputRelation.header.GetHeader().size(); i++) {
             bool unique = true;
-            for (int j = 0; j < matchColumns.size(); j++) {
+            for (unsigned int j = 0; j < matchColumns.size(); j++) {
                 if (i == matchColumns.at(j).second) {
                     unique = false;
                 }
@@ -214,17 +214,17 @@ public:
 
     Header joinedHead1(Header one, Header two){
         std::vector<std::string> headers;
-        for(int i = 0; i < two.GetHeader().size(); i++){
-            for(int j = 0; j < one.GetHeader().size(); j++){
+        for(unsigned int i = 0; i < two.GetHeader().size(); i++){
+            for(unsigned int j = 0; j < one.GetHeader().size(); j++){
                 if(one.toStringSingle(j) == two.toStringSingle(i)){
                     headMap.insert(std::pair<int, int>(i, j));
                 }
             }
         }
-        for(int i = 0; i < one.GetHeader().size(); i++){
+        for(unsigned int i = 0; i < one.GetHeader().size(); i++){
             headers.push_back(one.toStringSingle(i));
         }
-        for(int i = 0; i < two.GetHeader().size(); i++){
+        for(unsigned int i = 0; i < two.GetHeader().size(); i++){
             if(headMap.find(i) == headMap.end()){
                 headers.push_back(two.toStringSingle(i));
             }
@@ -244,10 +244,10 @@ public:
 
     Tuple combineTuples1(Tuple first, Tuple second){
         std::vector<std::string> vals;
-        for(int i = 0; i < first.GetAttributes().size(); i++){
+        for(unsigned int i = 0; i < first.GetAttributes().size(); i++){
             vals.push_back(first.toStringSingle(i));
         }
-        for(int i = 0; i < second.GetAttributes().size(); i++){
+        for(unsigned int i = 0; i < second.GetAttributes().size(); i++){
             if(headMap.find(i) == headMap.end()){
                 vals.push_back(second.toStringSingle(i));
             }
@@ -329,7 +329,7 @@ public:
 
         for(unsigned int i = 0; i < newValues.size(); i++) {
             int numberAttributes = newValues.at(i).GetAttributes().size();
-            for(int j = 0; j < numberAttributes; j++) {
+            for(unsigned int j = 0; j < numberAttributes; j++) {
                 if (j == 0) {
                     myNew += "  " + header.toStringSingle(j) + "=";
                 }

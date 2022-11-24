@@ -131,18 +131,18 @@ public:
         std::string myRules;
         std::vector<Rule *> ruleList = program.GetRules();
 
-            for (int i = 0; i < ruleList.size(); i++) {
+            for (unsigned int i = 0; i < ruleList.size(); i++) {
                 myRules += ruleList.at(i)->toStringRule() + ".\n";
 
                 int tupleCount = database.count();
 
                 std::vector<Relation> intermediateRelations;
-                for (int j = 0; j < ruleList.at(i)->GetBody().size(); j++) {
+                for (unsigned int j = 0; j < ruleList.at(i)->GetBody().size(); j++) {
                     intermediateRelations.push_back(makeBodyRelations(ruleList.at(i)->GetBody().at(j)));
                 }
                 Relation joinedIntermediate;
                 if (intermediateRelations.size() > 1) {
-                    for (int k = 0; k < (intermediateRelations.size() - 1); k++) {
+                    for (unsigned int k = 0; k < (intermediateRelations.size() - 1); k++) {
                         joinedIntermediate = intermediateRelations.at(k).NaturalJoin(/*intermediateRelations.at(k),*/ intermediateRelations.at(k + 1));
                         intermediateRelations.at(k + 1) = joinedIntermediate;
                     }
