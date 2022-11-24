@@ -146,7 +146,6 @@ public:
         headMap.clear();
 
         for (unsigned int i = 0; i < header.GetHeader().size(); i++) {
-            bool unique = true;
             for (unsigned int j = 0; j < inputRelation.header.GetHeader().size(); j++) {
                 if (header.toStringSingle(i) == inputRelation.header.toStringSingle(j)) {
                     //std::cout << "these are my headers:" << std::endl;
@@ -154,7 +153,6 @@ public:
                     //std::cout << "inputHeader: " << inputRelation.header.toStringSingle(j) << std::endl;
 
                     matchColumns.push_back(std::pair<int, int>(i, j));
-                    unique = false;
                     //std::cout << i << " " << j <<std::endl;
                 }
             }
@@ -162,7 +160,7 @@ public:
         for (unsigned int i = 0; i < inputRelation.header.GetHeader().size(); i++) {
             bool unique = true;
             for (unsigned int j = 0; j < matchColumns.size(); j++) {
-                if (i == matchColumns.at(j).second) {
+                if ((int)i == matchColumns.at(j).second) {
                     unique = false;
                 }
             }
@@ -329,7 +327,7 @@ public:
 
         for(unsigned int i = 0; i < newValues.size(); i++) {
             int numberAttributes = newValues.at(i).GetAttributes().size();
-            for(unsigned int j = 0; j < numberAttributes; j++) {
+            for(int j = 0; j < numberAttributes; j++) {
                 if (j == 0) {
                     myNew += "  " + header.toStringSingle(j) + "=";
                 }
