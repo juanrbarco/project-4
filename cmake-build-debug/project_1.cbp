@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="project_1"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="project_1">
+				<Option output="C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/project_1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Juan/Documents/cs236/project-4/project-4/."/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 project_1"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="project_1/fast">
+				<Option output="C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/project_1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Juan/Documents/cs236/project-4/project-4/."/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 project_1/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Juan/Documents/cs236/project-4/project-4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/AddAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/AddAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Automaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/ColonAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/ColonAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/ColonDashAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/ColonDashAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/CommaAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/CommaAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/CommentAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/CommentAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Database.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Database.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/DatalogProgram.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/EOFAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/EOFAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/FactsAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/FactsAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Header.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Header.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/IDAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/IDAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Interpreter.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Interpreter.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/LeftParenAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/LeftParenAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Lexer.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Lexer.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/MultiplyAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/MultiplyAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Parameter.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Parameter.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Parser.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Parser.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/PeriodAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/PeriodAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Predicate.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Predicate.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/QMarkAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/QMarkAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/QueriesAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/QueriesAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Relation.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Relation.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/RightParenAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/RightParenAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Rule.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Rule.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/RulesAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/RulesAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/SchemesAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/SchemesAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/StringAutomaton.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/StringAutomaton.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Token.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Token.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Tuple.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Tuple.h">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/main.cpp">
+			<Option target="project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

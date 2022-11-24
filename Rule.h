@@ -15,6 +15,13 @@ public:
     void setHead(Predicate* head);
     void setBody(Predicate* body);
     std::string toStringRule();
+
+    Predicate* GetHead() {
+        return head;
+    }
+    std::vector<Predicate*> GetBody() {
+        return body;
+    }
 private:
     Predicate* head;
     std::vector<Predicate*> body;

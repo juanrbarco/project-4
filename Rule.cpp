@@ -18,6 +18,7 @@ void Rule::setBody(Predicate* body) {
     //std::cout << "I've got a body!" << std::endl;
 }
 
+
 std::string Rule:: toStringRule() {
     std::string myString = "";
 

@@ -37,6 +37,9 @@ public:
         return values.at(index);
     }
 
+    std::vector<std::string> GetAttributes() {
+        return values;
+    }
 
 
 };

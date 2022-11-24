@@ -24,6 +24,19 @@ public:
     Relation GetRelationCopy(std::string relationName) {
         return myRelations.at(relationName);
     };
+
+    void DoUnion (Relation interRelation, Relation originRelation) {
+        myRelations.at(interRelation.GetName()) = interRelation.unionize1(interRelation, originRelation);
+    }
+
+    int count() {
+        int counter = 0;
+        for (std::pair<std::string, Relation> numRelations : myRelations) {
+            counter += numRelations.second.GetTuples().size();
+        }
+        //std::cout<< "this is my number of tuples in the relation = " << counter << std::endl;
+        return counter;
+    }
 };
 
 

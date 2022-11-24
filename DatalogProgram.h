@@ -62,6 +62,14 @@ public:
        return queries;
    }
 
+    std::vector<Rule*> GetRules() {
+        return rules;
+    }
+
+    Rule* GetSingleRule(int index) {
+       return rules.at(index);
+   }
+
    void PrintQueries(int index) {
            std::cout << queries.at(index)->toStringPredicate() << "? ";
    }
