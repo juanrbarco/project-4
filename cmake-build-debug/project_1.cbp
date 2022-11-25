@@ -117,9 +117,6 @@
 		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/CommentAutomaton.h">
 			<Option target="project_1"/>
 		</Unit>
-		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Database.cpp">
-			<Option target="project_1"/>
-		</Unit>
 		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Database.h">
 			<Option target="project_1"/>
 		</Unit>
@@ -138,9 +135,6 @@
 		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/FactsAutomaton.h">
 			<Option target="project_1"/>
 		</Unit>
-		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Header.cpp">
-			<Option target="project_1"/>
-		</Unit>
 		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Header.h">
 			<Option target="project_1"/>
 		</Unit>
@@ -148,9 +142,6 @@
 			<Option target="project_1"/>
 		</Unit>
 		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/IDAutomaton.h">
-			<Option target="project_1"/>
-		</Unit>
-		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Interpreter.cpp">
 			<Option target="project_1"/>
 		</Unit>
 		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Interpreter.h">
@@ -210,9 +201,6 @@
 		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/QueriesAutomaton.h">
 			<Option target="project_1"/>
 		</Unit>
-		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Relation.cpp">
-			<Option target="project_1"/>
-		</Unit>
 		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Relation.h">
 			<Option target="project_1"/>
 		</Unit>
@@ -250,9 +238,6 @@
 			<Option target="project_1"/>
 		</Unit>
 		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Token.h">
-			<Option target="project_1"/>
-		</Unit>
-		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Tuple.cpp">
 			<Option target="project_1"/>
 		</Unit>
 		<Unit filename="C:/Users/Juan/Documents/cs236/project-4/project-4/Tuple.h">
