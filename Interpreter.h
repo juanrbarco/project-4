@@ -136,9 +136,9 @@ public:
         std::set<int> myReverseEdges;
         std::vector<int> nodes;
 
-        for (int i = 0; i < ruleList.size(); i++) {
+        for (unsigned int i = 0; i < ruleList.size(); i++) {
             //std::cout << "R" << i << ":" << std::endl;
-            for (int j  = 0; j < ruleList.at(i)->GetBody().size(); j++) {
+            for (unsigned int j  = 0; j < ruleList.at(i)->GetBody().size(); j++) {
                 int counter = 0;
                 while (counter < ruleList.size()) {
                     if (ruleList.at(i)->GetBody().at(j)->GetID()==ruleList.at(counter)->GetHead()->GetID()) {
@@ -190,7 +190,7 @@ public:
             if (SCCList.at(i).size() == 1) {
                 auto iterator = SCCList.at(i).begin();
                 int firstElement = *iterator;
-                for (int l = 0; l < program.GetSingleRule(firstElement)->GetBody().size(); l ++) {
+                for (unsigned int l = 0; l < program.GetSingleRule(firstElement)->GetBody().size(); l ++) {
                     if (program.GetSingleRule(firstElement)->GetHead()->GetID() ==
                         program.GetSingleRule(firstElement)->GetBody().at(l)->GetID()) {
                         isSingle = false;
@@ -238,7 +238,7 @@ public:
             if (!isSingle) {
                 int beforeCount = 0;
                 int afterCount = 1;
-                int counter = 0;
+                unsigned int counter = 0;
                 while (beforeCount != afterCount) {
                     counter++;
 

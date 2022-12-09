@@ -29,28 +29,19 @@ public:
     void insertPostOrderList(std::vector<int> postOrderList) {
         this->postOrderList = postOrderList;
     }
-    std::map<int, std::set<int>>reverseAdjacencyList() {
-        for (const auto &nodes : adjacencyList) {
-
-        }
-    }
 
     std::vector<int> dfs() {
         for (const auto &fromCopy : adjacencyList) {
             myNodes.insert({fromCopy.first, false});
-            //visited = false;
         }
         for (const auto &from: myNodes) {
             if (!myNodes[from.first]) {
                 dfsf(from.first);
             }
         }
-        /*std::cout << "My post order list: " << std::endl;
-        for (int i = 0; i < postOrderList.size(); i++) {
-            std::cout << postOrderList.at(i) << std::endl;
-        }*/
         return postOrderList;
     }
+
     void dfsf(int from) {
         myNodes[from] = true;
         for (const auto &to: adjacencyList[from]) {
@@ -90,7 +81,7 @@ public:
 
         //postOrderList.clear();
 
-        for (int i = 0; i < postOrderList.size(); i++) {
+        for (unsigned int i = 0; i < postOrderList.size(); i++) {
             //std::cout << "inside of: " << postOrderList.at(i) << std::endl;
             SCC.clear();
             bool visited = false;
