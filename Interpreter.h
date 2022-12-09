@@ -229,8 +229,9 @@ public:
                     if(database.count() != tupleCount){
                         myRules += joinedIntermediate.toStringNew(databaseRelation) + '\n';
                         myRules = myRules.substr(0, myRules.size() - 1);
-                        myRules += "1 passes: R" + std::to_string(firstElement) + "\n";
+                        //myRules += "1 passes: R" + std::to_string(firstElement) + "\n";
                     }
+                    myRules += "1 passes: R" + std::to_string(firstElement) + "\n";
                 }
             }
 
