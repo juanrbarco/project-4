@@ -202,7 +202,7 @@ public:
                     int tupleCount = database.count();
 
                     std::vector<Relation> intermediateRelations;
-                    for (unsigned int j = 0; j < ruleList.at(i)->GetBody().size(); j++) {
+                    for (unsigned int j = 0; j < ruleList.at(firstElement)->GetBody().size(); j++) {
                         intermediateRelations.push_back(makeBodyRelations(ruleList.at(firstElement)->GetBody().at(j)));
                     }
                     Relation joinedIntermediate;
