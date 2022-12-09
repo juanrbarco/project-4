@@ -7,6 +7,7 @@
 #include<vector>
 #include"Database.h"
 #include"DatalogProgram.h"
+#include"Graph.h"
 #include<list>
 
 class Interpreter {
@@ -16,6 +17,9 @@ private:
     DatalogProgram program;
     Database database;
     Database answeredQueries;
+    Graph forwardGraph;
+    Graph reverseGraph;
+    std::vector<std::set<int>> SCCList;
 
 public:
     Interpreter(DatalogProgram program) {
@@ -126,12 +130,177 @@ public:
             return myRelation;
     }
 
+    void organizeRules() {
+        std::vector<Rule*> ruleList = program.GetRules();
+        std::set<int> myEdges;
+        std::set<int> myReverseEdges;
+        std::vector<int> nodes;
+
+        for (int i = 0; i < ruleList.size(); i++) {
+            //std::cout << "R" << i << ":" << std::endl;
+            for (int j  = 0; j < ruleList.at(i)->GetBody().size(); j++) {
+                int counter = 0;
+                while (counter < ruleList.size()) {
+                    if (ruleList.at(i)->GetBody().at(j)->GetID()==ruleList.at(counter)->GetHead()->GetID()) {
+                        myEdges.insert(counter);
+                    }
+                    for (int k = 0; k < ruleList.at(counter)->GetBody().size(); k++) {
+                        if (ruleList.at(i)->GetHead()->GetID() == ruleList.at(counter)->GetBody().at(k)->GetID()) {
+                            myReverseEdges.insert(counter);
+                        }
+                    }
+                    counter++;
+                }
+            }
+            /*for (auto it = myEdges.begin(); it != myEdges.end(); it++ ) {
+                std::cout << "the edge: " << *it << std::endl;
+            }
+
+            for (auto it = myReverseEdges.begin(); it != myReverseEdges.end(); it++ ) {
+                std::cout << "the reversed edge: " << *it << std::endl;
+            }*/
+            forwardGraph.insertRule(i, myEdges);
+            reverseGraph.insertRule(i, myReverseEdges);
+            myEdges.clear();
+            myReverseEdges.clear();
+            //nodes.push_back(i);
+        }
+        forwardGraph.insertPostOrderList(reverseGraph.dfs());
+        //forwardGraph.dfsForward();
+        SCCList = forwardGraph.dfsForward();
+    }
+
+
+    std::string interpretRules2(std::vector<std::set<int>> SCCList) {
+        std::vector<std::set<int>> mySCC = SCCList;
+        counter++;
+        std::string myRules;
+        std::vector<Rule *> ruleList = program.GetRules();
+        bool isSingle = true;
+        std::string santaHelper;
+
+        for (unsigned int i = 0; i < SCCList.size(); i++) {
+            myRules += "SCC: ";
+            for (const auto &print: SCCList.at(i)) {
+                myRules += "R" + std::to_string(print) + ",";
+                santaHelper += "R" + std::to_string(print) + ",";
+            }
+            myRules = myRules.substr(0, myRules.size()-1);
+            myRules += "\n";
+            if (SCCList.at(i).size() == 1) {
+                auto iterator = SCCList.at(i).begin();
+                int firstElement = *iterator;
+                for (int l = 0; l < program.GetSingleRule(firstElement)->GetBody().size(); l ++) {
+                    if (program.GetSingleRule(firstElement)->GetHead()->GetID() ==
+                        program.GetSingleRule(firstElement)->GetBody().at(l)->GetID()) {
+                        isSingle = false;
+                        break;
+                    }
+                }
+                if (isSingle) {
+                    myRules += ruleList.at(firstElement)->toStringRule() + ".\n";
+
+                    int tupleCount = database.count();
+
+                    std::vector<Relation> intermediateRelations;
+                    for (unsigned int j = 0; j < ruleList.at(i)->GetBody().size(); j++) {
+                        intermediateRelations.push_back(makeBodyRelations(ruleList.at(firstElement)->GetBody().at(j)));
+                    }
+                    Relation joinedIntermediate;
+                    if (intermediateRelations.size() > 1) {
+                        for (unsigned int k = 0; k < (intermediateRelations.size() - 1); k++) {
+                            joinedIntermediate = intermediateRelations.at(k).NaturalJoin(/*intermediateRelations.at(k),*/ intermediateRelations.at(k + 1));
+                            intermediateRelations.at(k + 1) = joinedIntermediate;
+                        }
+                    } else {
+                        joinedIntermediate = intermediateRelations.at(0);
+                    }
+
+                    Predicate *ruleHead = ruleList.at(firstElement)->GetHead();
+
+                    joinedIntermediate.AddName(ruleHead->GetID());
+                    joinedIntermediate = joinedIntermediate.Project(joinedIntermediate.ProjectRule(ruleHead->GetParameters()));
+
+                    Relation databaseRelation = database.GetRelationCopy(ruleHead->GetID());
+
+                    joinedIntermediate = joinedIntermediate.Rename(databaseRelation.GetHeader().GetHeader());
+                    database.DoUnion(joinedIntermediate, databaseRelation);
+                    database.AddRelation(joinedIntermediate);
+                    allMyRules.insert(myRules);
+                    if(database.count() != tupleCount){
+                        myRules += joinedIntermediate.toStringNew(databaseRelation) + '\n';
+                        myRules = myRules.substr(0, myRules.size() - 1);
+                        myRules += "1 passes: R" + std::to_string(firstElement) + "\n";
+                    }
+                }
+            }
+            isSingle = false;
+            if (!isSingle) {
+                int beforeCount = 0;
+                int afterCount = 1;
+                int counter = 0;
+                while (beforeCount != afterCount) {
+                    counter++;
+
+                    beforeCount = database.count();
+                    for (const auto &it: SCCList.at(i)) {
+
+                        myRules += ruleList.at(it)->toStringRule() + ".\n";
+
+                        int tupleCount = database.count();
+
+                        std::vector<Relation> intermediateRelations;
+                        for (unsigned int j = 0; j < ruleList.at(it)->GetBody().size(); j++) {
+                            intermediateRelations.push_back(makeBodyRelations(ruleList.at(it)->GetBody().at(j)));
+                        }
+                        Relation joinedIntermediate;
+                        if (intermediateRelations.size() > 1) {
+                            for (unsigned int k = 0; k < (intermediateRelations.size() - 1); k++) {
+                                joinedIntermediate = intermediateRelations.at(
+                                        k).NaturalJoin(/*intermediateRelations.at(k),*/
+                                        intermediateRelations.at(k + 1));
+                                intermediateRelations.at(k + 1) = joinedIntermediate;
+                            }
+                        } else {
+                            joinedIntermediate = intermediateRelations.at(0);
+                        }
+
+                        Predicate *ruleHead = ruleList.at(it)->GetHead();
+
+                        joinedIntermediate.AddName(ruleHead->GetID());
+                        joinedIntermediate = joinedIntermediate.Project(
+                                joinedIntermediate.ProjectRule(ruleHead->GetParameters()));
+
+                        Relation databaseRelation = database.GetRelationCopy(ruleHead->GetID());
+
+                        joinedIntermediate = joinedIntermediate.Rename(databaseRelation.GetHeader().GetHeader());
+                        database.DoUnion(joinedIntermediate, databaseRelation);
+                        database.AddRelation(joinedIntermediate);
+                        allMyRules.insert(myRules);
+                        if (database.count() != tupleCount) {
+                            myRules += joinedIntermediate.toStringNew(databaseRelation) + '\n';
+                            myRules = myRules.substr(0, myRules.size() - 1);
+                        }
+                        afterCount = database.count();
+                    }
+                }
+                myRules += std::to_string(counter) + " passes: " + santaHelper;
+                myRules = myRules.substr(0, myRules.size()-1);
+                myRules += "\n";
+            }
+        }
+        return myRules;
+    }
+
+
     std::string interpretRules() {
+
         counter++;
         std::string myRules;
         std::vector<Rule *> ruleList = program.GetRules();
 
             for (unsigned int i = 0; i < ruleList.size(); i++) {
+
                 myRules += ruleList.at(i)->toStringRule() + ".\n";
 
                 int tupleCount = database.count();
@@ -203,20 +372,11 @@ public:
 
        void PrintRelations() {
            std::string print;
-           int beforeCount = 0;
-           int afterCount = 1;
-
            interpretSchemes();
            interpretFacts();
            std::cout << "Rule Evaluation" << std::endl;
-           while (beforeCount != afterCount) {
-               beforeCount = database.count();
-               print += interpretRules();
-               afterCount = database.count();
-           }
+           print += interpretRules2(SCCList);
            std::cout << print;
-
-           std:: cout << std::endl << "Schemes populated after " << std::to_string(counter)  << " passes through the Rules." << std::endl;
            std::cout << std::endl << "Query Evaluation" << std::endl;
            interpretQueries();
        }

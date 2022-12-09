@@ -26,7 +26,7 @@ public:
     };
 
     void DoUnion (Relation interRelation, Relation originRelation) {
-        myRelations.at(interRelation.GetName()) = interRelation.unionize1(interRelation, originRelation);
+        myRelations.at(interRelation.GetName()) = interRelation.unionize(interRelation, originRelation);
     }
 
     int count() {

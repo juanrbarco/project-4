@@ -24,7 +24,9 @@ int main(int argc, char** argv) {
     parser->parse();
 
     Interpreter* interpreter = new Interpreter(parser->GetProgram());
+    interpreter->organizeRules();
     interpreter->PrintRelations();
+
 
   //lexer->PrintTokens();
 

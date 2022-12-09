@@ -194,7 +194,7 @@ public:
         return newRelation;
     }
 
-    Relation NaturalJoin1(Relation r1, Relation r2){
+   /* Relation NaturalJoin1(Relation r1, Relation r2){
         Header h;
         headMap.clear();
         h = joinedHead1(r1.GetHeader(), r2.GetHeader());
@@ -208,9 +208,9 @@ public:
             }
         }
         return r;
-    }
+    }*/
 
-    Header joinedHead1(Header one, Header two){
+    /*Header joinedHead1(Header one, Header two){
         std::vector<std::string> headers;
         for(unsigned int i = 0; i < two.GetHeader().size(); i++){
             for(unsigned int j = 0; j < one.GetHeader().size(); j++){
@@ -229,18 +229,18 @@ public:
         }
         Header h(headers);
         return h;
-    }
+    }*/
 
-    bool isTupleJoinable1(std::map<int, int> matchingCols, Tuple one, Tuple two){
+   /* bool isTupleJoinable1(std::map<int, int> matchingCols, Tuple one, Tuple two){
         for(std::pair<int, int> match : matchingCols){
             if(one.toStringSingle(match.second) != two.toStringSingle(match.first)){
                 return false;
             }
         }
         return true;
-    }
+    }*/
 
-    Tuple combineTuples1(Tuple first, Tuple second){
+    /*Tuple combineTuples1(Tuple first, Tuple second){
         std::vector<std::string> vals;
         for(unsigned int i = 0; i < first.GetAttributes().size(); i++){
             vals.push_back(first.toStringSingle(i));
@@ -252,32 +252,13 @@ public:
         }
         Tuple t(vals);
         return t;
-    }
+    }*/
 
-    Relation unionize1(Relation r1, Relation r2){
-        for(Tuple t : r2.GetTuples()){
-            r1.AddTuple(t);
+    Relation unionize(Relation firstRelation, Relation secondRelation){
+        for(Tuple t : secondRelation.GetTuples()){
+            firstRelation.AddTuple(t);
         }
-        return r1;
-    }
-
-    bool myUnion(Relation inputRelation) {
-        bool change = true;
-        for (Tuple t: rows) {
-            if (inputRelation.rows.insert(t).second) {
-            }
-            else {
-                for (Tuple x: inputRelation.GetTuples()) {
-                    rows.insert(x);
-                    std::cout << x.toString() << std::endl;
-                }
-                change = true;
-            }
-        }
-        /*for (Tuple t: inputRelation.rows) {
-            rows.insert(t);
-        }*/
-        return change;
+        return firstRelation;
     }
 
     void PrintRelation() {
@@ -341,6 +322,16 @@ public:
                     myNew += newValues.at(i).toStringSingle(j) + ", ";
                 }
             }
+
+            /*int x = newValues.at(i).GetAttributes().size();
+                for(int j = 0; j < x; j++){
+                    myNew += header.toStringSingle(j) + "=";
+                            myNew+= newValues.at(i).toStringSingle(j) + ", ";
+                }
+                myNew = myNew.substr(0, myNew.size()-2) + "\n";
+            }
+            myNew += "\n";*/
+
             myNew += "\n";
         }
         return myNew;

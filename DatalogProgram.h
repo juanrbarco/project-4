@@ -74,6 +74,14 @@ public:
            std::cout << queries.at(index)->toStringPredicate() << "? ";
    }
 
+    /*void GetAllRuleBodies() {
+       std::vector<std::vector<Predicate*>> myRulesBody;
+       for (int i  = 0; i < rules.size(); i++) {
+           myRulesBody.push_back(rules.at(i)->GetBody());
+       }
+
+   }  */
+
     void printProgram() {
         std::cout << "Schemes(" << schemes.size() << "):" << std::endl;
         for (long unsigned int i = 0; i < schemes.size(); i++) {
