@@ -183,7 +183,6 @@ public:
             myRules += "SCC: ";
             for (const auto &print: SCCList.at(i)) {
                 myRules += "R" + std::to_string(print) + ",";
-                santaHelper += "R" + std::to_string(print) + ",";
             }
             myRules = myRules.substr(0, myRules.size()-1);
             myRules += "\n";
@@ -284,7 +283,10 @@ public:
                         afterCount = database.count();
                     }
                 }
-                myRules += std::to_string(counter) + " passes: " + santaHelper;
+                myRules += std::to_string(counter) + " passes: ";
+                for (const auto &helper: mySCC.at(i)) {
+                    myRules += "R" + std::to_string(helper) + ",";
+                }
                 myRules = myRules.substr(0, myRules.size()-1);
                 myRules += "\n";
                 isSingle= true;

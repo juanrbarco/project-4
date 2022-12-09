@@ -103,19 +103,10 @@ public:
             }
         }
 
-        /*for (const auto &from: myNodes) {
-            std::cout << "Inside of: " << from.first << " when " << from.first << " is " << from.second << std::endl;
-            dfsfSCC(from.first);
-            SCCList.push_back(SCC);
-            //if (SCC.size() == adjacencyList.size()) {
-            SCC.clear();
-                //break;
-            //}
-        }*/
         /*std::cout << "SCC List: ";
-        SCCList.push_back(SCC);
+       // SCCList.push_back(SCC);
         for (int i = 0; i < SCCList.size(); i++) {
-            //std::cout << "SCC " << ": ";
+            std::cout << i << ": ";
             for (const auto &it: SCCList.at(i)) {
                 std::cout << it << ", ";
             }
