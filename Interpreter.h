@@ -234,6 +234,7 @@ public:
                     }
                 }
             }
+
             if (!isSingle || (mySCC.at(i).size() > 1)) {
                 int beforeCount = 0;
                 int afterCount = 1;

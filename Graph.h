@@ -44,6 +44,14 @@ public:
 
     void dfsf(int from) {
         myNodes[from] = true;
+        /*std::cout << "Reversed graph: " << std::endl;
+        for (const auto &iterator : adjacencyList) {
+            std::cout << "R" << iterator.first << ": ";
+            for (const auto &iterator2: iterator.second) {
+                std::cout << iterator2 << ",";
+            }
+            std::cout << std::endl;
+        }*/
         for (const auto &to: adjacencyList[from]) {
             if (!myNodes[to]) {
                 dfsf(to);
@@ -87,7 +95,7 @@ public:
             bool visited = false;
             if (!myNodes[postOrderList.at(i)]) {
                 dfsfSCC(postOrderList.at(i));
-               SCC.insert(i);
+               SCC.insert(postOrderList.at(i));
                visited = true;
             }
             if (visited) {
@@ -104,9 +112,10 @@ public:
                 //break;
             //}
         }*/
-        //SCCList.push_back(SCC);
-        /*for (int i = 0; i < SCCList.size(); i++) {
-            std::cout << "SCC " << i << ": ";
+        /*std::cout << "SCC List: ";
+        SCCList.push_back(SCC);
+        for (int i = 0; i < SCCList.size(); i++) {
+            //std::cout << "SCC " << ": ";
             for (const auto &it: SCCList.at(i)) {
                 std::cout << it << ", ";
             }
