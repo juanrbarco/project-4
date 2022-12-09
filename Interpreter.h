@@ -139,12 +139,12 @@ public:
         for (unsigned int i = 0; i < ruleList.size(); i++) {
             //std::cout << "R" << i << ":" << std::endl;
             for (unsigned int j  = 0; j < ruleList.at(i)->GetBody().size(); j++) {
-                int counter = 0;
+                unsigned int counter = 0;
                 while (counter < ruleList.size()) {
                     if (ruleList.at(i)->GetBody().at(j)->GetID()==ruleList.at(counter)->GetHead()->GetID()) {
                         myEdges.insert(counter);
                     }
-                    for (int k = 0; k < ruleList.at(counter)->GetBody().size(); k++) {
+                    for (unsigned int k = 0; k < ruleList.at(counter)->GetBody().size(); k++) {
                         if (ruleList.at(i)->GetHead()->GetID() == ruleList.at(counter)->GetBody().at(k)->GetID()) {
                             myReverseEdges.insert(counter);
                         }
