@@ -286,6 +286,7 @@ public:
                 myRules += std::to_string(counter) + " passes: " + santaHelper;
                 myRules = myRules.substr(0, myRules.size()-1);
                 myRules += "\n";
+                isSingle= true;
             }
         }
         return myRules;
